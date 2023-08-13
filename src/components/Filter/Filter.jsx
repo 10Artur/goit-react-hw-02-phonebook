@@ -1,10 +1,16 @@
+import { FilterContainer, FilterInput, FilterLabel } from './Filter.styled';
+
 export const Filter = ({ onChangeContactFilter, value }) => {
   return (
-    <div>
-      <label>
+    <FilterContainer>
+      <FilterLabel>
         Find contacts by name
-        <input value={value} onChange={onChangeContactFilter}></input>
-      </label>
-    </div>
+        <FilterInput
+          value={value}
+          onChange={onChangeContactFilter}
+          placeholder="Search contact..."
+        ></FilterInput>
+      </FilterLabel>
+    </FilterContainer>
   );
 };

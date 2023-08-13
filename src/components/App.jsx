@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { ContactForm } from './ContactsForm/ContactsForm';
 import { ContactsList } from './ContactsList/ContactsList';
 import { Filter } from './Filter/Filter';
-import { GlobalStyle } from './GlobalStyle';
+import { AppTitle1, AppTitle2, Container, GlobalStyle } from './GlobalStyle';
 
 export class App extends Component {
   state = {
@@ -49,10 +49,10 @@ export class App extends Component {
     );
 
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <Container>
+        <AppTitle1>Phonebook</AppTitle1>
         <ContactForm onAddContact={this.addContact} />
-        <h2>Contacts</h2>
+        <AppTitle2>Contacts</AppTitle2>
         <Filter
           onChangeContactFilter={this.changeContactFilter}
           value={this.state.filter}
@@ -62,7 +62,7 @@ export class App extends Component {
           onDeleteContact={this.deleteContact}
         />
         <GlobalStyle />
-      </div>
+      </Container>
     );
   }
 }

@@ -1,6 +1,13 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
+import {
+  ContactsError,
+  ContactsField,
+  ContactsForm,
+  ContactsLabel,
+  ContactsBtn,
+} from './ContactsForm.styled';
 
 const ContactsFormSchema = Yup.object().shape({
   name: Yup.string().required('Name is required!'),
@@ -20,21 +27,29 @@ export const ContactForm = ({ onAddContact }) => {
         actions.resetForm();
       }}
     >
-      <Form>
-        <label>
+      <ContactsForm>
+        <ContactsLabel>
           Name
-          <Field type="text" name="name" placeholder="Enter your name..." />
-          <ErrorMessage name="name" />
-        </label>
+          <ContactsField
+            type="text"
+            name="name"
+            placeholder="Enter your name..."
+          />
+          <ContactsError component="div" name="name" />
+        </ContactsLabel>
 
-        <label>
+        <ContactsLabel>
           Number
-          <Field type="tel" name="number" placeholder="Enter your number..." />
-          <ErrorMessage name="number" />
-        </label>
+          <ContactsField
+            type="tel"
+            name="number"
+            placeholder="Enter your number..."
+          />
+          <ContactsError component="div" name="number" />
+        </ContactsLabel>
 
-        <button type="submit">Add contact</button>
-      </Form>
+        <ContactsBtn type="submit">Add contact</ContactsBtn>
+      </ContactsForm>
     </Formik>
   );
 };

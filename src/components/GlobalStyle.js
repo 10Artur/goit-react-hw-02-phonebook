@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
+import styled from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle `
 body {
@@ -41,4 +42,24 @@ body {
       max-width: 100%;
       height: auto;
       }
+`;
+
+export const Container = styled.div `
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.71);
+  /* padding-top: 50px;
+  padding-bottom: 30px; */
+  padding: 50px;
+`;
+
+export const AppTitle1 = styled.h1 `
+  text-align: center;
+`;
+
+export const AppTitle2 = styled.h2 `
+  text-align: left;
 `;
